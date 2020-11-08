@@ -108,7 +108,7 @@ class PromtailBuilder(Builder):
             if serviceaccount_name is None:
                 raise InvalidParamError('To bind roles a service account is required')
 
-        self.object_names_update({
+        self.object_names_init({
             'config': self.basename('-config'),
             'service-account': serviceaccount_name,
             'cluster-role': self.basename(),

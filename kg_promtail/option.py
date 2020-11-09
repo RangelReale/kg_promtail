@@ -1,6 +1,7 @@
 from typing import Optional, Any, Mapping
 
 from kubragen.configfile import ConfigFile
+from kubragen.data import Data
 from kubragen.option import OptionDef
 from kubragen.options import Options
 
@@ -88,5 +89,27 @@ class PromtailOptions(Options):
                 'resources': {
                     'daemonset': OptionDef(allowed_types=[Mapping]),
                 }
+            },
+        }
+
+
+class PromtailOptions_Default_Resources_DaemonSet(Data):
+    """
+    Default option value for:
+
+    ```kubernetes.resources.daemonset```
+    """
+    def is_enabled(self) -> bool:
+        return True
+
+    def get_value(self) -> Any:
+        return {
+            'requests': {
+                'cpu': '100m',
+                'memory': '128Mi'
+            },
+            'limits': {
+                'cpu': '200m',
+                'memory': '128Mi'
             },
         }

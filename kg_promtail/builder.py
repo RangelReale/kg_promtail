@@ -78,15 +78,15 @@ class PromtailBuilder(Builder):
 
     SOURCE_NAME = 'kg_promtail'
 
-    BUILD_ACCESSCONTROL: TBuild = 'accesscontrol'
-    BUILD_CONFIG: TBuild = 'config'
-    BUILD_SERVICE: TBuild = 'service'
+    BUILD_ACCESSCONTROL = TBuild('accesscontrol')
+    BUILD_CONFIG = TBuild('config')
+    BUILD_SERVICE = TBuild('service')
 
-    BUILDITEM_CONFIG: TBuildItem = 'config'
-    BUILDITEM_SERVICE_ACCOUNT: TBuildItem = 'service-account'
-    BUILDITEM_CLUSTER_ROLE: TBuildItem = 'cluster-role'
-    BUILDITEM_CLUSTER_ROLE_BINDING: TBuildItem = 'cluster-role-binding'
-    BUILDITEM_DAEMONSET: TBuildItem = 'daemonset'
+    BUILDITEM_CONFIG = TBuildItem('config')
+    BUILDITEM_SERVICE_ACCOUNT = TBuildItem('service-account')
+    BUILDITEM_CLUSTER_ROLE = TBuildItem('cluster-role')
+    BUILDITEM_CLUSTER_ROLE_BINDING = TBuildItem('cluster-role-binding')
+    BUILDITEM_DAEMONSET = TBuildItem('daemonset')
 
     def __init__(self, kubragen: KubraGen, options: Optional[PromtailOptions] = None):
         super().__init__(kubragen)
